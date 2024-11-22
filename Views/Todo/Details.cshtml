@@ -1,0 +1,39 @@
+﻿@model MVC.Models.TodoModel
+@{
+    ViewBag.Title = "Todo Güncelle";
+    Layout = "_Layout";
+}
+<div class="container mt-5">
+    <h1 class="mb-4">Yapılacak Detay</h1>
+    <form asp-action="Update" method="post" class="needs-validation" novalidate>
+        <input type="hidden" asp-for="Id" value="@Model.Id" />
+        <div class="mb-3">
+            <label for="todoName" class="form-label">Adı</label>
+            <input type="text" readonly="readonly" class="form-control" id="todoName" name="todoName" value="@Model.todoName" required>
+            <div class="invalid-feedback">
+                Yapılacak adını girin
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="todoDescription" class="form-label">Açıklama</label>
+            <textarea class="form-control" readonly="readonly" id="todoDescription" name="todoDescription" rows="3" required>@Model.todoDescription</textarea>
+            <div class="invalid-feedback">
+                Açıklama giriniz
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="todoStatus" class="form-label">Durum</label>
+             @{
+                    if (@Model.todoStatus)
+                    {
+                        <p>Tamamlandı</p>
+                    }
+                    else
+                    {
+                        <p>Bekliyor</p>
+                    }
+                }
+        </div>
+      
+    </form>
+</div>

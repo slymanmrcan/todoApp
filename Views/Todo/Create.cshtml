@@ -1,0 +1,35 @@
+﻿@model MVC.Models.TodoModel
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<div class="container mt-5">
+    <h1 class="mb-4">Yeni yapılacak ekle</h1>
+
+    <form asp-action="Create" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="todoName" class="form-label">Adı</label>
+            <input type="text" class="form-control" id="todoName" name="todoName" value="@Model?.todoName" required>
+            <div class="invalid-feedback">
+                Yapılacak adını girin
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="todoDescription" class="form-label">Açıklama</label>
+            <textarea class="form-control" id="todoDescription" name="todoDescription" rows="3" required>@Model?.todoDescription</textarea>
+            <div class="invalid-feedback">
+                Please provide a description.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="todoStatus" class="form-label">Durum</label>
+            <select class="form-select" id="todoStatus" name="todoStatus" required>
+                <option value="true">Tamamlandı</option>
+                <option value="false" selected>Bekliyor</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+        <a href="/Todo/Index" class="btn btn-secondary">Listeye Dön</a>
+    </form>
+</div>

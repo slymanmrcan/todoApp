@@ -1,0 +1,35 @@
+# .NET Core/ASP.NET Core
+bin/
+obj/
+*.user
+*.lock.json
+*.suo
+*.userprefs
+*.ide/
+.vscode/
+.DS_Store
+.idea/
+
+# appsettings dosyalarını gizle
+appsettings.json
+appsettings.Development.json
+
+# User secrets (eğer secrets.json kullanıyorsan)
+*.secrets.json
+
+# Paket yönetimi dosyaları
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log
+
+# Docker
+docker-compose.override.yml
+*.dockerignore
+
+# Log ve debug dosyaları
+logs/
+*.log
+
+# Geliştirici araçları
+*.sln.docstates
